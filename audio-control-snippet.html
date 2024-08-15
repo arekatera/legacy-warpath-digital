@@ -1,0 +1,31 @@
+<div id="audio-control-wrapper">
+    <audio id="audio-player" src="./assets/song.mp3" autoplay loop></audio>
+    <button id="audio-control">Pause</button>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var audioPlayer = document.getElementById('audio-player');
+        var audioControl = document.getElementById('audio-control');
+        var isPlaying = localStorage.getItem('audioPlaying') === 'true';
+
+        if (isPlaying) {
+            audioPlayer.play();
+            audioControl.textContent = 'Pause';
+        } else {
+            audioPlayer.pause();
+            audioControl.textContent = 'Play';
+        }
+
+        audioControl.addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+                audioControl.textContent = 'Pause';
+                localStorage.setItem('audioPlaying', 'true');
+            } else {
+                audioPlayer.pause();
+                audioControl.textContent = 'Play';
+                localStorage.setItem('audioPlaying', 'false');
+            }
+        });
+    });
+</script>

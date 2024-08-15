@@ -1,0 +1,74 @@
+		body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            padding: 20px;
+        }
+        #header img {
+            max-width: 350px; /* Needs to be fine tuned further to prevent screen size issues */
+            height: auto;
+        }
+        #header .side-image {
+            flex: 0 0 auto;
+            width: 120px; 
+            height: auto;
+        }
+        #header .center-image {
+            flex: 1;
+            text-align: center;
+        }
+        #nav {
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+        }
+        #nav a {
+            margin: 0 15px;
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #main-home {
+            padding: 20px;
+            text-align: center;
+			width: 100vw;
+        }
+		#main{
+			padding: 20px;
+			text-align: left;
+			width: 87%;
+		}
+        .marquee {
+            color: yellow;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+		.marquee span{
+			color: red; 
+		}
+        #guestbook {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: gray;
+            color: black;
+            border: 2px dashed yellow;
+        }
+		#divider-home{
+			text-align: center;
+			margin: 10px 8px;
+			width: 100vw;
+		}
+		.divider{
+			text-align: center;
+			width: 87%;
+			height: auto;
+		}
+		
