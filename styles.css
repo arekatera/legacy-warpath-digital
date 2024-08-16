@@ -18,7 +18,7 @@
         }
         #header .side-image {
             flex: 0 0 auto;
-            width: 120px; 
+            width: 135px; 
             height: auto;
         }
         #header .center-image {
@@ -32,9 +32,11 @@
         }
         #nav a {
             margin: 0 15px;
-            color: red;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            
+			font-family: 'Chomsky', sans-serif;
+			font-size: 25px;
         }
         #main-home {
             padding: 20px;
@@ -63,12 +65,17 @@
         }
 		#divider-home{
 			text-align: center;
-			margin: 10px 8px;
 			width: 100vw;
 		}
 		.divider{
-			text-align: center;
-			width: 87%;
+			
+			width: 90%;
 			height: auto;
 		}
-		
+		@font-face {
+			font-family: 'Chomsky';
+			src: url('fonts/Chomsky.woff2') format('woff2'),
+			url('fonts/Chomsky.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+}
