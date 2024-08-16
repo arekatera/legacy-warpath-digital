@@ -1,81 +1,143 @@
-		body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        #header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            padding: 20px;
-        }
-        #header img {
-            max-width: 350px; /* Needs to be fine tuned further to prevent screen size issues */
-            height: auto;
-        }
-        #header .side-image {
-            flex: 0 0 auto;
-            width: 135px; 
-            height: auto;
-        }
-        #header .center-image {
-            flex: 1;
-            text-align: center;
-        }
-        #nav {
-            background-color: black;
-            padding: 10px;
-            text-align: center;
-        }
-        #nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            
-			font-family: 'Chomsky', sans-serif;
-			font-size: 25px;
-        }
-        #main-home {
-            padding: 20px;
-            text-align: center;
-			width: 100vw;
-        }
-		#main{
-			padding: 20px;
-			text-align: left;
-			width: 87%;
-		}
-        .marquee {
-            color: yellow;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-		.marquee span{
-			color: red; 
-		}
-        #guestbook {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: gray;
-            color: black;
-            border: 2px dashed yellow;
-        }
-		#divider-home{
-			text-align: center;
-			width: 100vw;
-		}
-		.divider{
-			
-			width: 90%;
-			height: auto;
-		}
-		@font-face {
-			font-family: 'Chomsky';
-			src: url('fonts/Chomsky.woff2') format('woff2'),
-			url('fonts/Chomsky.woff') format('woff');
-			font-weight: normal;
-			font-style: normal;
+body {
+    background-image: url("./assets/120.gif");
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-image: url("./assets/skulls 4.jpg");
+    background-size: contain;
+    padding: 20px;
+}
+
+#header img {
+    max-width: 100%; /* Adjusted for responsiveness */
+    height: auto;
+}
+
+#header .side-image {
+    flex: 0 0 auto;
+    width: 135px; 
+    height: auto;
+}
+
+#header .center-image {
+    flex: 1;
+    text-align: center;
+	max-width: 400px; /* Set a maximum width for the logo */
+    margin: 0 auto; /* Center align within flex container */
+}
+
+#header .center-image img {
+    max-width: 100%; /* Ensure the image scales within its container */
+    height: auto;
+}
+
+#nav {
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+	background-image: url("./assets/bricks 9.gif");
+}
+
+#nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Chomsky', sans-serif;
+    font-size: 25px;
+}
+
+#main-home {
+    padding: 10px;
+	margin: 10vw;
+	margin-top: 0px;
+    text-align: center;
+    width: 80vw%;
+    box-sizing: border-box;
+    background-color: black; 
+}
+
+#main {
+    padding: 20px;
+    text-align: left;
+    margin: 0 auto;
+    width: 87%;
+    max-width: 1200px; /* Added max-width for larger screens */
+    box-sizing: border-box;
+}
+
+.marquee {
+    color: yellow;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.marquee span {
+    color: red; 
+}
+
+#guestbook {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: gray;
+    color: black;
+    border: 2px dashed yellow;
+    box-sizing: border-box;
+}
+
+#divider-home {
+    text-align: center;
+    width: 100%;
+}
+
+.divider {
+    width: 90%;
+    height: auto;
+}
+
+@font-face {
+    font-family: 'Chomsky';
+    src: url('fonts/Chomsky.woff2') format('woff2'),
+         url('fonts/Chomsky.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #nav a {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
+    #header .side-image {
+        width: 100px; /* Adjust size for mobile */
+    }
+
+    #main {
+        width: 95%; /* Adjust width for mobile */
+    }
+	
+	#header .center-image {
+        max-width: 300px; /* Smaller max width for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #nav a {
+        font-size: 16px; /* Even smaller font size for very small screens */
+    }
+
+    #header .side-image {
+        width: 80px; /* Adjust size for small mobile devices */
+    }
+	
+	#header .center-image {
+        max-width: 250px; /* Even smaller max width for small devices */
+    }
 }
