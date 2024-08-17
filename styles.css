@@ -34,15 +34,19 @@ body {
 }
 
 #header .center-image img {
-    max-width: 100%; /* Ensure the image scales within its container */
+    max-width: 100%;
     height: auto;
 }
 
 #nav {
     background-color: black;
+	display: flex;
+	justify-content: center; /* Horizontally centers the flex items */
+	align-items: center;
     padding: 10px;
     text-align: center;
 	background-image: url("./assets/bricks 9.gif");
+	height: 30px;
 }
 
 #nav a {
@@ -50,7 +54,12 @@ body {
     color: white;
     text-decoration: none;
     font-family: 'Chomsky', sans-serif;
-    font-size: 25px;
+    font-size: 3vw;
+}
+
+.navDivider{
+	width: auto;
+	height: 40px;
 }
 
 #main-home {
@@ -60,16 +69,36 @@ body {
     text-align: center;
     width: 80vw%;
     box-sizing: border-box;
-    background-color: black; 
+    background-image: url("./assets/bodybg.jpg");
+	border: 15px solid black;
+	border-image-source: url("./assets/565.gif");
+	border-image-repeat: round;
+	border-image-slice: 30;
 }
 
 #main {
-    padding: 20px;
     text-align: left;
     margin: 0 auto;
     width: 87%;
     max-width: 1200px; /* Added max-width for larger screens */
     box-sizing: border-box;
+}
+
+#stamp-strip {
+    display: grid;
+    grid-auto-flow: column; /* Align items in a single row */
+    grid-auto-columns: minmax(0, 1fr); /* Allow columns to shrink */
+    align-items: center;
+    overflow: hidden; /* Hide any overflow */
+    width: 100%; /* Ensure the container takes full width */
+    padding-bottom: 8px;
+	gap: 1vw;
+}
+
+#stamp-strip img {
+    width: 100%; /* Images fill their grid cell */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 5px; /* Optional: spacing between images */
 }
 
 .marquee {
@@ -80,6 +109,20 @@ body {
 
 .marquee span {
     color: red; 
+}
+
+#marquee-container {
+	display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Space out the images and marquee */
+    padding: 10px; /* Adjust padding to fit your design */
+    background-color: black; /* Background color for contrast */
+	border: 5px solid maroon;
+}
+
+#marquee-container img {
+	height: 100px; /* Adjust to the size you need */
+	width: auto; /* Maintain aspect ratio */
 }
 
 #guestbook {
@@ -97,7 +140,7 @@ body {
 }
 
 .divider {
-    width: 90%;
+    width: 100%;
     height: auto;
 }
 
@@ -107,6 +150,74 @@ body {
          url('fonts/Chomsky.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+#body-container{
+	background-color: rgba(0, 0, 0, 0.6);
+	/*border-radius: 5px;*/
+	padding: 7px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border: 5px solid black;
+}
+
+/*#body-container h2, h3, p{
+	padding: 10px 0px 0px 10px;
+}*/
+
+#body-container h2{
+	font-family: 'Chomsky', sans-serif;
+    color: white;
+    text-decoration: none;
+	font-weight: normal;
+    font-family: 'Chomsky', sans-serif;
+    font-size: 5vw;
+}
+
+#body-container .blinkie{
+    display: inline;
+	width: 30%;
+}
+
+#body-container h3{
+	justify-content: center;
+	text-align: center;
+}
+
+#title-container{
+	height: 8vw;
+	display: flex;
+    align-items: center;
+}
+
+#title-container img{
+	margin-left: 17%; 
+}
+
+#informationwimage{
+	display: flex;
+	
+}
+
+#informationwimage .poster{
+	width: 20vw;
+}
+
+.subheading {
+	margin: 2px;
+	margin-left: 13%;
+	margin-right: 13%;
+	justify-content: center;
+	background-color: rgba(0,0,0,0.8);
+}
+
+#divider-container{
+	justify-content: center;
+	display: flex;
+}
+
+.orb-divider{
+	justify-content: center;
 }
 
 /* Media Queries for Responsive Design */
@@ -126,6 +237,9 @@ body {
 	#header .center-image {
         max-width: 300px; /* Smaller max width for mobile */
     }
+	/*#stamp-strip img {
+        width: 20%; /* Adjust image width for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -139,5 +253,8 @@ body {
 	
 	#header .center-image {
         max-width: 250px; /* Even smaller max width for small devices */
+    }
+	/*#stamp-strip img {
+        width: 60px; /* Further adjust image width for very small screens */
     }
 }
