@@ -179,6 +179,11 @@ body {
 	width: 30%;
 }
 
+.berserk{
+	float: right;
+	justify-content: center;
+}
+
 #body-container h3{
 	justify-content: center;
 	text-align: center;
@@ -194,13 +199,57 @@ body {
 	margin-left: 17%; 
 }
 
+#title-container-center{
+	height: 8vw;
+	display: flex;
+    align-items: center;
+	text-align: center;
+	align-items: center;
+}
+
+#title-container-center img{
+	margin-left: 17%; 
+}
+
+#paragraph-container{
+	display: flex;
+    align-items: center;
+}
+
 #informationwimage{
 	display: flex;
 	
 }
 
 #informationwimage .poster{
-	width: 20vw;
+	object-fit: contain;
+	max-width: 20vw;
+	height: auto;
+}
+
+.artist{
+	object-fit: contain;
+	max-width: 20vw;
+	max-height: 20vw;
+	border: 5px solid maroon;
+	margin-top: 5px;
+}
+
+#poster-strip{
+	display: grid;
+    grid-auto-flow: column; /* Align items in a single row */
+    grid-auto-columns: minmax(0, 1fr); /* Allow columns to shrink */
+    align-items: center;
+    overflow: hidden; /* Hide any overflow */
+    width: 100%; /* Ensure the container takes full width */
+    padding-bottom: 8px;
+	gap: 1vw;
+}
+
+#poster-strip img{
+	width: 100%; /* Images fill their grid cell */
+    height: auto; /* Maintain aspect ratio */
+    margin-top:5px; 
 }
 
 .subheading {
@@ -218,7 +267,19 @@ body {
 
 .orb-divider{
 	justify-content: center;
+	width: 100%;
+	height: auto;
 }
+
+.eye-divider{
+	justify-content: center;
+	width: 80%;
+	height: auto;
+	margin-top: 2vw;
+	margin-bottom: 2vw;
+}
+
+
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
