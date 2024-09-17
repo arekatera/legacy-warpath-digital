@@ -76,7 +76,7 @@ body {
 	border-image-slice: 30;
 }
 
-#main {
+#mainb {
     text-align: left;
     margin: 0 auto;
     width: 87%;
@@ -109,6 +109,7 @@ body {
 
 .marquee span {
     color: red; 
+    font-weight: bold;
 }
 
 #marquee-container {
@@ -174,9 +175,13 @@ body {
     font-size: 5vw;
 }
 
-#body-container .blinkie{
+.blinkie{
     display: inline;
-	width: 30%;
+	width: 20vw;
+}
+
+.blinkieLink{
+	width: 100%;
 }
 
 .berserk{
@@ -213,26 +218,57 @@ body {
 
 #paragraph-container{
 	display: flex;
-    align-items: center;
+    align-items: flex-start;
+	justify-content: flex-start;
+	gap: 20px; /* Space between the image and text */
+	flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+#paragraph-container img{
+	max-width: 100%; /* Ensures the image is responsive */
+    height: auto;
+	order: 2;
+	border: 5px solid maroon;
+	margin-top: 5px;
+}
+
+#paragraph-container p{
+	flex: 1;
+	order: 1;
 }
 
 #informationwimage{
 	display: flex;
-	
+    align-items: flex-start;
+	justify-content: flex-start;
+	gap: 20px; /* Space between the image and text */
+	flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
-#informationwimage .poster{
+p span{
+	color: red;
+	font-weight: bold;
+}
+
+.poster{
 	object-fit: contain;
 	max-width: 20vw;
 	height: auto;
+	order: 2;
+}
+
+#informationwimage p{
+	flex: 1;
+	order: 1;
 }
 
 .artist{
 	object-fit: contain;
-	max-width: 20vw;
-	max-height: 20vw;
+	max-width: 30%;
+	height: auto;
 	border: 5px solid maroon;
 	margin-top: 5px;
+	order: 2;
 }
 
 #poster-strip{
@@ -279,9 +315,67 @@ body {
 	margin-bottom: 2vw;
 }
 
+footer{
+	background-color: maroon;
+	background-image: url("./assets/528.gif");
+	background-repeat: repeat;
+	background-size: 100px 100px;
+	border: 7px solid red;
+	border-image-source: url("./assets/falmes.jpg");
+	border-image-repeat: round;
+	border-image-slice: 5;
+	height: 6vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	gap: 1vw;
+	padding: 10px;
+	
+}
+
+footer img {
+	width: 40vw;
+	height: auto;
+}
+
 
 
 /* Media Queries for Responsive Design */
+
+
+@media (max-width: 768px){
+	paragraph-container {
+                flex-direction: column;
+                align-items: center; /* Center-aligns the content */
+				
+				}
+					
+	paragraph-container p{
+		order: 2; 
+	}
+	paragraph-container img {
+                margin-bottom: 20px; /* Adds spacing between image and text */
+				order: 1;
+            }
+	#informationwimage p{
+		order: 2; 
+	}
+	#informationwimage img{
+        margin-bottom: 20px; /* Adds spacing between image and text */
+        margin-top: 10px; /* Adds spacing between image and text */
+		order: 1;
+		max-width: 85%;
+		height: auto;
+    }
+			#informationwimage{
+				flex-direction: column;
+                align-items: center; /* Center-aligns the content */
+				
+			}
+	
+}
+
 @media (max-width: 768px) {
     #nav a {
         font-size: 18px; /* Smaller font size for mobile */
@@ -301,6 +395,7 @@ body {
 	/*#stamp-strip img {
         width: 20%; /* Adjust image width for smaller screens */
     }
+	
 }
 
 @media (max-width: 480px) {
