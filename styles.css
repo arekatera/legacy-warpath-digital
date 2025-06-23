@@ -1,416 +1,479 @@
-body {
-    background-image: url("./assets/120.gif");
-    color: white;
+/* Variables and the like */
+:root{
+}
+@font-face {
+  font-family: 'ADDSBP';
+  src: url('./assets/fonts/ADDSBP.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Chomsky';
+  src: url('./assets/fonts/Chomsky.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Background / Body Styling */
+body{
+	background-image: url("./assets/bgimgs/120.gif");
+    color: black;
     font-family: "Times New Roman", Times, serif;
     margin: 0;
     padding: 0;
 }
+/* Header Logos Styling */
+header{
 
-#header {
-    display: flex;
+}
+header #logos{
+	display: flex;
     justify-content: center;
     align-items: center;
-	background-image: url("./assets/skulls 4.jpg");
-    background-size: contain;
     padding: 20px;
+	background-image: url("./assets/bgimgs/skulls 4.jpg");
 }
-
-#header img {
-    max-width: 100%; /* Adjusted for responsiveness */
+header #logos .side-image{
+	flex: 1;
+    max-width: 135px; 
+	width: 15%;
     height: auto;
 }
-
-#header .side-image {
-    flex: 0 0 auto;
-    width: 135px; 
-    height: auto;
+header #logos .center-image img{
+	width:100%;
 }
-
-#header .center-image {
-    flex: 1;
+header #logos .center-image {
+	flex: 0 1 auto;
     text-align: center;
-	max-width: 400px; /* Set a maximum width for the logo */
-    margin: 0 auto; /* Center align within flex container */
+	width: 58%;
+	max-width: 400px; 
+    margin: 0 auto;
 }
-
-#header .center-image img {
-    max-width: 100%;
-    height: auto;
-}
-
-#nav {
-    background-color: black;
+/* Navbar Styling */
+header nav{
+	background-color: black;
 	display: flex;
-	justify-content: center; /* Horizontally centers the flex items */
+	justify-content: center;
 	align-items: center;
     padding: 10px;
     text-align: center;
-	background-image: url("./assets/bricks 9.gif");
+	background-image: url("./assets/bgimgs/bricks 9.gif");
 	height: 30px;
 }
-
-#nav a {
-    margin: 0 15px;
+header nav ul{
+	display: flex;
+	list-style-type: none;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	margin-top: 2.5px;
+}
+header nav ul li{
+}
+header nav ul li a{
+	margin: auto 15px;
     color: white;
     text-decoration: none;
     font-family: 'Chomsky', sans-serif;
-    font-size: 3vw;
+    font-size: 30px;
 }
-
-.navDivider{
+header nav ul li img{
 	width: auto;
 	height: 40px;
 }
-
-#main-home {
-    padding: 10px;
+header .divider{
+	width: 100%;
+	height: auto;
+}
+/* Main Content Styling */
+main{
+	padding: 10px;
 	margin: 10vw;
 	margin-top: 0px;
+	margin-bottom: 15px;
     text-align: center;
-    width: 80vw%;
+    width: 80vw;
     box-sizing: border-box;
-    background-image: url("./assets/bodybg.jpg");
+    background-image: url("./assets/bgimgs/bodybg.jpg");
 	border: 15px solid black;
-	border-image-source: url("./assets/565.gif");
+	border-image-source: url("./assets/bgimgs/565.gif");
 	border-image-repeat: round;
 	border-image-slice: 30;
+	/* -----need to setup automatic resizing of images----- */
+	display: flex; 
+    flex-direction: column;
+    align-items: center; 
+	justify-content: center;
+	box-sizing: border-box;
 }
-
-#mainb {
-    text-align: left;
-    margin: 0 auto;
-    width: 87%;
-    max-width: 1200px; /* Added max-width for larger screens */
-    box-sizing: border-box;
+.orbDivider{
+	width: 95%;
+	height: auto;
 }
-
-#stamp-strip {
-    display: grid;
-    grid-auto-flow: column; /* Align items in a single row */
-    grid-auto-columns: minmax(0, 1fr); /* Allow columns to shrink */
+.stamp-strip{
+	display: flex;
+	justify-content: center;
+	max-width: 90%;
+	width: 100%;  
+	gap: -10px;
+}
+.stamp-strip img{
+	max-width: 110px;
+	width: 12%;
+	height: auto; 
+	margin: 0 5px; 
+	flex: 0 1 auto;
+}
+.app-container{
+	 width: 300px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    overflow: hidden; /* Prevent overflow */
+    position: relative;
+}
+/* Marquee Styling */
+.marquee-container {
+	margin-top: 5px;
+	display: flex;
     align-items: center;
-    overflow: hidden; /* Hide any overflow */
-    width: 100%; /* Ensure the container takes full width */
-    padding-bottom: 8px;
-	gap: 1vw;
+    justify-content: space-between; 
+    padding: 10px; 
+    background-color: black;
+	border: 5px solid maroon;
+	width: 85%;
 }
 
-#stamp-strip img {
-    width: 100%; /* Images fill their grid cell */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 5px; /* Optional: spacing between images */
+.marquee-container img {
+	height: 80px;
+	width: auto; 
 }
-
-.marquee {
+marquee {
     color: yellow;
     font-size: 1.5em;
     font-weight: bold;
 }
 
-.marquee span {
+marquee span {
     color: red; 
     font-weight: bold;
 }
-
-#marquee-container {
-	display: flex;
-    align-items: center; /* Vertically center the items */
-    justify-content: space-between; /* Space out the images and marquee */
-    padding: 10px; /* Adjust padding to fit your design */
-    background-color: black; /* Background color for contrast */
-	border: 5px solid maroon;
-}
-
-#marquee-container img {
-	height: 100px; /* Adjust to the size you need */
-	width: auto; /* Maintain aspect ratio */
-}
-
-#guestbook {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: gray;
-    color: black;
-    border: 2px dashed yellow;
-    box-sizing: border-box;
-}
-
-#divider-home {
-    text-align: center;
-    width: 100%;
-}
-
-.divider {
-    width: 100%;
-    height: auto;
-}
-
-@font-face {
-    font-family: 'Chomsky';
-    src: url('fonts/Chomsky.woff2') format('woff2'),
-         url('fonts/Chomsky.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-#body-container{
+/* Main Page Information Styling */
+section{
+	color: white;
 	background-color: rgba(0, 0, 0, 0.6);
-	/*border-radius: 5px;*/
-	padding: 7px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+	padding: 10px 15px;
 	border: 5px solid black;
+	width: 85%;
+	text-align: left;
 }
-
-/*#body-container h2, h3, p{
-	padding: 10px 0px 0px 10px;
-}*/
-
-#body-container h2{
-	font-family: 'Chomsky', sans-serif;
-    color: white;
-    text-decoration: none;
-	font-weight: normal;
+section h1{
+	margin: 0;
     font-family: 'Chomsky', sans-serif;
-    font-size: 5vw;
+	font-weight: normal;
+	font-size: 50px;
 }
-
-.blinkie{
-    display: inline;
-	width: 20vw;
-}
-
-.blinkieLink{
-	width: 100%;
-}
-
-.berserk{
+.titleImg{
 	float: right;
-	justify-content: center;
-}
-
-#body-container h3{
-	justify-content: center;
-	text-align: center;
-}
-
-#title-container{
-	height: 8vw;
-	display: flex;
-    align-items: center;
-}
-
-#title-container img{
-	margin-left: 17%; 
-}
-
-#title-container-center{
-	height: 8vw;
-	display: flex;
-    align-items: center;
-	text-align: center;
-	align-items: center;
-}
-
-#title-container-center img{
-	margin-left: 17%; 
-}
-
-#paragraph-container{
-	display: flex;
-    align-items: flex-start;
-	justify-content: flex-start;
-	gap: 20px; /* Space between the image and text */
-	flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
-
-#paragraph-container img{
-	max-width: 100%; /* Ensures the image is responsive */
-    height: auto;
-	order: 2;
-	border: 5px solid maroon;
-	margin-top: 5px;
-}
-
-#paragraph-container p{
-	flex: 1;
-	order: 1;
-}
-
-#informationwimage{
-	display: flex;
-    align-items: flex-start;
-	justify-content: flex-start;
-	gap: 20px; /* Space between the image and text */
-	flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
-
-p span{
-	color: red;
-	font-weight: bold;
-}
-
-.poster{
-	object-fit: contain;
-	max-width: 20vw;
+	width: 50px;
 	height: auto;
-	order: 2;
 }
-
-#informationwimage p{
-	flex: 1;
-	order: 1;
-}
-
-.artist{
-	object-fit: contain;
-	max-width: 30%;
-	height: auto;
-	border: 5px solid maroon;
-	margin-top: 5px;
-	order: 2;
-}
-
-#poster-strip{
+.blinkieParadise{
 	display: grid;
-    grid-auto-flow: column; /* Align items in a single row */
-    grid-auto-columns: minmax(0, 1fr); /* Allow columns to shrink */
-    align-items: center;
-    overflow: hidden; /* Hide any overflow */
-    width: 100%; /* Ensure the container takes full width */
-    padding-bottom: 8px;
-	gap: 1vw;
+	grid-auto-flow: column;
+	align-items: center;
 }
-
-#poster-strip img{
-	width: 100%; /* Images fill their grid cell */
-    height: auto; /* Maintain aspect ratio */
-    margin-top:5px; 
+.blinkie{
+	width:80%;
+	padding: 5px;
+	float: right;
 }
-
-.subheading {
-	margin: 2px;
-	margin-left: 13%;
-	margin-right: 13%;
+section h2{
+	padding-left: 10px;
+	margin: 5px 0;
+}
+section p{
+	order: 1;
+	margin-top: 0;
+	margin-right: 10px;
+}
+.posterStrip{
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: center;
+}
+.posterStrip img{
+	width: 90%;
+	height: auto;
+	border: 5px solid maroon;
+}
+.sectFlex{
+	padding: 10px;
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: center;
+}
+.artGIF{
+	display: grid;
+	grid-auto-flow: column;
 	justify-content: center;
-	background-color: rgba(0,0,0,0.8);
+	justify-items: center;
+	align-items: center;
+	gap: 5px;
 }
-
-#divider-container{
-	justify-content: center;
-	display: flex;
+.artGIF img{
+	max-height: 40px;
+	width: auto;
 }
-
-.orb-divider{
-	justify-content: center;
+.displayImg{
+	object-fit: contain;
+	max-width: 20vw; /* Able to change width from HTML via <img src="" class="displayImg" style="width: 10%"> */
+	height: auto;
+	order: 2;
+	border: 5px solid maroon;
+	box-sizing: border-box;
+}
+aside a:link{
+	color: yellow;
+}
+aside a:visited{
+	color: #c78a08;
+}
+.meta{
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	text-align: center;
+}
+.ascii{
+	font-size: .7vw;
+}
+.ascii2{
+	font-size: .7vw;
+}
+.smokeDivider{
+	display: block;
+    margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
 	width: 100%;
-	height: auto;
 }
-
-.eye-divider{
-	justify-content: center;
-	width: 80%;
-	height: auto;
-	margin-top: 2vw;
-	margin-bottom: 2vw;
+/* Content Navbar Styling */
+section nav ul li a{
+	color: gold; /* Adjust text color for contrast */
+	text-decoration: none; /* Removes the underline from the link */
+	background-image: url('./assets/buttons/download.png'); /* Replace with your image URL */
+	background-repeat: no-repeat;
+	background-size: 100% 100%; /* Ensures the background covers the entire element */
+	text-align: center;
+	padding: 7px;
+    font-family: 'ADDSBP', sans-serif;
+	font-size: 12px;
 }
-
-footer{
-	background-color: maroon;
-	background-image: url("./assets/528.gif");
-	background-repeat: repeat;
-	background-size: 100px 100px;
-	border: 7px solid red;
-	border-image-source: url("./assets/falmes.jpg");
-	border-image-repeat: round;
-	border-image-slice: 5;
-	height: 6vw;
+section nav ul{
+	list-style-type: none;
+	padding-left: 0;
+}
+section nav ul li{
+	padding-bottom: 25px; 
+}
+#contentNav{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
-	gap: 1vw;
-	padding: 10px;
+}
+.cNav{
+	display: grid;
+    grid-auto-flow: row;
+	text-align: center;
+	margin: 25px;
+	margin-top: 5px;
+}
+pre{
+	font-size: 9px;
+}
+.horizontal{
+	margin: 25px -5px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 5px;
+	line-height: 0.1;
 	
 }
-
-footer img {
-	width: 40vw;
-	height: auto;
+.horizontal li{
 }
-
-
-
-/* Media Queries for Responsive Design */
-
-
-@media (max-width: 768px){
-	paragraph-container {
-                flex-direction: column;
-                align-items: center; /* Center-aligns the content */
-				
-				}
-					
-	paragraph-container p{
-		order: 2; 
+/* Footer Styling */
+footer{
+	height: 90px;
+	display: flex;
+	width: 90%;
+	margin: 0 auto;
+}
+.buttonstrip{
+	text-align: center;
+	margin: 10px auto;
+	background-image: url("./assets/bgimgs/skulls.jpg");
+	background-size: 3%;
+	border: 2px solid gray;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	width: 100%;
+}
+.buttonstrip img{
+	height: 80%;
+	width: auto;
+}
+.buttonstrip a {
+	height: 100%;
+	width: auto;
+	display: flex;
+	align-items: center;
+}
+.clownFoot{
+	height:40px;
+	width:auto;
+	margin-top:3px;
+}
+.skull{
+	margin-top: 2px;
+	height: 60px;
+}
+/* Media Queries */
+@media only screen and (max-width: 1200px){
+	.buttonstrip img{
+	height: 60%;
+	width: auto;
 	}
-	paragraph-container img {
-                margin-bottom: 20px; /* Adds spacing between image and text */
-				order: 1;
-            }
-	#informationwimage p{
-		order: 2; 
+}
+@media only screen and (max-width: 1000px){
+	.artGIF img{
+		max-height: 30px;
+		width: auto;
 	}
-	#informationwimage img{
-        margin-bottom: 20px; /* Adds spacing between image and text */
-        margin-top: 10px; /* Adds spacing between image and text */
-		order: 1;
-		max-width: 85%;
-		height: auto;
-    }
-			#informationwimage{
-				flex-direction: column;
-                align-items: center; /* Center-aligns the content */
-				
-			}
+	.least{
+		display: none;
+	}
+	.buttonstrip img{
+	height: 80%;
+	width: auto;
+	}
+	#contentNav{
+		display: grid;
+		grid-auto-flow: row;
+	}
+	.ascii{
+		order: 0;
+		font-size: 1.5vw;
+		display: flex;
+		justify-content: center;
+	}
+	.ascii2{
+		display: none;
+	}
+	.cNav{
+		order: 2;
+	}
+	.cNav nav ul{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 5px;
+	}
+}
+@media only screen and (max-width: 800px) {
+	.sectFlex{
+		grid-auto-flow: row;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.displayImg{
+		order: 0;
+		max-width: 65%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 15px;
+	}
+	.artGIF img{
+		max-height: 25px;
+		width: auto;
+	}
+	.stamp-strip img{
+		margin: 0 1px;
+		width: 14%
+	}
+	.clownFoot{
+		display: none;
+	}
+	.posterStrip img{
+		border: 3px solid maroon;
+	}
+}
+@media only screen and (max-width: 660px) {
+	.artGIF img{
+		max-height: 15px;
+		width: auto;
+	}
+	.buttonstrip{
+		background-size: 10%;
+	}
+	.buttonstrip img{
+	height: 70%;
+	width: auto;
+	}
+	header nav ul li a{
+		font-size: 20px;
+		margin: auto 8px;
+	}
+	header nav ul li{
+		display: flex;
+		justify-content: center;
+	}
+	.blinkieParadise{
+		grid-auto-flow: row;
+	}
+	.blinkie{
+		width: 80%;
+		float: none;
+        display: block; 
+        margin: 0 auto;
+	}
+	.posterStrip img{
+		border: 2px solid maroon;
+	}
+}
+@media only screen and (max-width: 500px){
+	.buttonstrip{
+		gap: 1px;
+	}
+	.buttonstrip img{
+		height: 60%;
+		width: auto;
+	
+	}
+	.displayImg{
+		max-width: 100%;
+	}
 	
 }
-
-@media (max-width: 768px) {
-    #nav a {
-        font-size: 18px; /* Smaller font size for mobile */
-    }
-
-    #header .side-image {
-        width: 100px; /* Adjust size for mobile */
-    }
-
-    #main {
-        width: 95%; /* Adjust width for mobile */
-    }
+@media only screen and (max-width: 420px){
+	section h1{
+		font-size: 40px;
+	}
+	section nav ul li a{
+		font-size: 8px;
+	}
+	.buttonstrip img{
+		height: 50%;
+		width: auto;
 	
-	#header .center-image {
-        max-width: 300px; /* Smaller max width for mobile */
-    }
-	/*#stamp-strip img {
-        width: 20%; /* Adjust image width for smaller screens */
-    }
-	
-}
-
-@media (max-width: 480px) {
-    #nav a {
-        font-size: 16px; /* Even smaller font size for very small screens */
-    }
-
-    #header .side-image {
-        width: 80px; /* Adjust size for small mobile devices */
-    }
-	
-	#header .center-image {
-        max-width: 250px; /* Even smaller max width for small devices */
-    }
-	/*#stamp-strip img {
-        width: 60px; /* Further adjust image width for very small screens */
-    }
+	}
+	.artGIF img{
+		max-height: 13px;
+		width: auto;
+	}
 }
